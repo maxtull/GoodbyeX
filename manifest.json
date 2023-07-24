@@ -1,0 +1,22 @@
+{
+    "name": "GoodbyeX",
+    "version": "1.0.0",
+    "description": "A simple extension that removes the new \"X\" branding from Twitter.",
+    "manifest_version": 3,
+    "permissions": [
+        "tabs"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "https://twitter.com/*"
+            ],
+            "js": [
+                "script.js"
+            ],
+            "css": [],
+            "run_at": "document_start"
+        }
+    ],
+    "homepage_url": "https://twitter.com/MaxFNBR"
+}
