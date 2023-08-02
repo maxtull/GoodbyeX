@@ -1,15 +1,22 @@
 {
     "name": "GoodbyeX",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "A simple extension that removes the new \"X\" branding from Twitter.",
     "manifest_version": 3,
+    "icons": {
+        "16": "images/favicon-16x16.png",
+        "32": "images/favicon-32x32.png",
+        "512": "images/logo.png"
+    },
     "permissions": [
         "tabs"
     ],
     "content_scripts": [
         {
             "matches": [
-                "https://twitter.com/*"
+                "https://twitter.com/*",
+                "https://*.twitter.com/*",
+                "https://x.com/*"
             ],
             "js": [
                 "script.js"
