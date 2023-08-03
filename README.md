@@ -7,6 +7,7 @@ Created by [MaxFNBR](https://twitter.com/MaxFNBR).
 
 1. Visit the Chrome extension's page [here](https://chrome.google.com/webstore/detail/goodbyex/cafaialogfdbacbbhgjohmkocpkcnfjf).
 2. Click "Add to Chrome".
+3. Click "Add extension" on the pop-up window.
 
 ## Install (Firefox)
 
