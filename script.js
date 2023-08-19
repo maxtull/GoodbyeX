@@ -30,11 +30,26 @@ document.addEventListener('DOMContentLoaded', () => {
         splash.setAttribute('class', classes);
     });
 
-    // Tweet Text
-    waitForSelector('#react-root > div > div > div.css-1dbjc4n.r-18u37iz.r-13qz1uu.r-417010 > main > div > div > div > div > div > div.css-1dbjc4n.r-kemksi.r-184en5c > div > div.css-1dbjc4n.r-kemksi.r-1h8ys4a > div:nth-child(1) > div > div > div > div.css-1dbjc4n.r-1iusvr4.r-16y2uox.r-1777fci.r-1h8ys4a.r-1bylmt5.r-13tjlyg.r-7qyjyx.r-1ftll1t > div.css-1dbjc4n.r-kemksi.r-jumn1c.r-xd6kpl.r-gtdqiz.r-ipm5af.r-184en5c > div:nth-child(2) > div > div > div:nth-child(2) > div > div > span > span').then(element => {
-        if (!element) return;
-        element.innerHTML = 'Tweet';
-    })
+    // Button Texts
+    new MutationObserver(() => {
+        const tweetButton = document.querySelector('#react-root > div > div > div.css-1dbjc4n.r-18u37iz.r-13qz1uu.r-417010 > main > div > div > div > div > div > div.css-1dbjc4n.r-kemksi.r-184en5c > div > div.css-1dbjc4n.r-kemksi.r-1h8ys4a > div:nth-child(1) > div > div > div > div.css-1dbjc4n.r-1iusvr4.r-16y2uox.r-1777fci.r-1h8ys4a.r-1bylmt5.r-13tjlyg.r-7qyjyx.r-1ftll1t > div.css-1dbjc4n.r-kemksi.r-jumn1c.r-xd6kpl.r-gtdqiz.r-ipm5af.r-184en5c > div:nth-child(2) > div > div > div:nth-child(2) > div > div > span > span');
+        if (tweetButton && tweetButton.textContent != 'Tweet') {
+            tweetButton.innerHTML = 'Tweet';
+        }
+
+        const tweetSidebarButton = document.querySelector('#react-root > div > div > div.css-1dbjc4n.r-18u37iz.r-13qz1uu.r-417010 > header > div > div > div > div.css-1dbjc4n.r-1habvwh > div.css-1dbjc4n.r-1r5su4o.r-e7q0ms > a > div > span > div > div > span > span')
+        if (tweetSidebarButton && tweetSidebarButton.textContent != 'Tweet') {
+            tweetSidebarButton.innerHTML = 'Tweet';
+        }
+
+        const retweetButton = document.querySelector('div.css-1dbjc4n.r-16y2uox.r-1wbh5a2 > div > span');
+        if (retweetButton && retweetButton.textContent == 'Repost') {
+            retweetButton.innerHTML = 'Retweet';
+        }
+    }).observe(document.body, {
+        childList: true,
+        subtree: true
+    });
 });
 
 function waitForSelector(selector) {
