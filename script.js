@@ -52,6 +52,19 @@ document.addEventListener('DOMContentLoaded', () => {
         if (retweetButton && retweetButton.textContent == 'Repost') {
             retweetButton.innerHTML = 'Retweet';
         }
+
+        const notificationsTab = document.querySelector('#react-root > div > div > div.css-1dbjc4n.r-18u37iz.r-13qz1uu.r-417010 > main > div > div > div > div.css-1dbjc4n.r-kemksi.r-1kqtdi0.r-1ljd8xs.r-13l2t4g.r-1phboty.r-16y2uox.r-1jgb5lz.r-11wrixw.r-61z16t.r-1ye8kvj.r-13qz1uu.r-184en5c > div > div.css-1dbjc4n.r-1jgb5lz.r-1ye8kvj.r-13qz1uu');
+        if (notificationsTab) {
+            const articles = notificationsTab.querySelectorAll('article');
+            if (articles && articles.length > 0) {
+                for (const article of articles) {
+                    const text = article.querySelector('div.css-1dbjc4n.r-18u37iz > div.css-1dbjc4n.r-1iusvr4.r-16y2uox.r-1777fci > div.css-901oao.r-1nao33i.r-37j5jr.r-a023e6.r-16dba41.r-rjixqe.r-bcqeeo.r-1udh08x.r-qvutc0 > span > span');
+                    if (text && (text.textContent.includes(' post') || text.textContent.includes('repost'))) {
+                        text.innerHTML = text.innerHTML.replace(' post', ' tweet').replace('repost', 'retweet');
+                    }
+                }
+            }
+        }
     }).observe(document.body, {
         childList: true,
         subtree: true
