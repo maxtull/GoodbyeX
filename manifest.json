@@ -16,7 +16,9 @@
             "matches": [
                 "https://twitter.com/*",
                 "https://*.twitter.com/*",
-                "https://x.com/*"
+                "https://*.twimg.com/*",
+                "https://x.com/*",
+                "https://*.x.com/*"
             ],
             "js": [
                 "script.js"
