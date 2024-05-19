@@ -50,6 +50,16 @@ document.addEventListener('DOMContentLoaded', () => {
             tweetSidebarButton.innerHTML = 'Tweet';
         }
 
+        // Replace "Only on X" text in trending section with "Only on Twitter"
+        const trendingOnlyOnTwitter = document.querySelectorAll('div.css-175oi2r.r-1adg3ll.r-1ny4l3l > div > div > div > div:nth-child(1) > div:nth-child(3) > span');
+        if (trendingOnlyOnTwitter && trendingOnlyOnTwitter.length > 0){
+            for (const onlyOnTwitterText of trendingOnlyOnTwitter){
+                if (onlyOnTwitterText.textContent.includes('Only on X')){
+                    onlyOnTwitterText.innerHTML = onlyOnTwitterText.innerHTML.replace('X', 'Twitter');
+                }
+            }
+        }
+
         // Retweet Button
         const retweetButton = document.querySelector('div.css-175oi2r.r-16y2uox.r-1wbh5a2 > div > span');
         if (retweetButton && retweetButton.textContent == 'Repost') {
